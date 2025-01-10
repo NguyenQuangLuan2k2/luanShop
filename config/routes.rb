@@ -17,4 +17,8 @@ Rails.application.routes.draw do
     resources :subscribers, only: [ :create ]
   end
   resource :unsubscribe, only: [ :show ]
+  Rails.application.routes.draw do
+    root "home#index"  # Replace with your actual root path controller and action
+    # Other routes...
+  end
 end
