@@ -20,6 +20,8 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost 
+  port: 5432
 
 
 development:
@@ -86,6 +88,7 @@ production:
     database: luan_shop_production
     username: luan_shop
     password: <%= ENV["LUAN_SHOP_DATABASE_PASSWORD"] %>
+    url: <%= ENV["DATABASE_URL"] %>
   cache:
     <<: *primary_production
     database: luan_shop_production_cache
